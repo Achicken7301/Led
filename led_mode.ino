@@ -20,18 +20,20 @@ void LedModeFirst(int brightness) {
 void LedModeSecond(int duration, int brightness) {
   int len = sizeof(led) / sizeof(led[0]);
   FourLedOnAnalog(brightness);
+  //  delay while listen to tactile
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
+
   FourLedOff();
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
@@ -41,40 +43,40 @@ void LedModeThird(int duration, int brightness) {
   analogWrite(led[0], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[1], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[2], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[3], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   FourLedOff();
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
@@ -85,16 +87,16 @@ void LedModeFourth(int duration, int brightness) {
   analogWrite(led[0], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[0], LOW);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
@@ -103,16 +105,16 @@ void LedModeFourth(int duration, int brightness) {
   analogWrite(led[1], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[1], LOW);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
@@ -121,16 +123,16 @@ void LedModeFourth(int duration, int brightness) {
   analogWrite(led[2], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[2], LOW);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
@@ -139,16 +141,16 @@ void LedModeFourth(int duration, int brightness) {
   analogWrite(led[3], brightness);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
   analogWrite(led[3], LOW);
   for (int i = 0; i < duration; i++) {
     delay(1);
-    buttonState = digitalRead(buttonPin);
-    if (buttonState == HIGH) {
+    int buttonPressed = IsPress();
+    if (buttonPressed == true) {
       break;
     }
   }
